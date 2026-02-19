@@ -18,7 +18,7 @@ Projeto de portfólio com HTML, CSS e JavaScript criado como prática para o cur
 <br>
 
 <p align="center">
-  <img alt="projeto portfólio" src=".github/preview.png" width="100%">
+  <img alt="projeto portfólio" src=".github/preview.PNG" width="100%">
 </p>
 
 ## 🚀 Tecnologias
