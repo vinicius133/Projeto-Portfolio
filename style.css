@@ -65,6 +65,7 @@ body{
 #profile img{
     /* Tamanho da largura da foto */
     width: 112px;
+    height: 112px;
     /* Centraliza */
     margin: auto;
     /* Deixa a foto redondinha */
@@ -76,11 +77,12 @@ body{
 /* AJUSTES NO TEXTO ABAIXO DA FOTO */
 #profile p{
     /* Deixa a letra um pouco mais gordinha (negrito médio) */
-    font-weight: 500;
+    font-weight: 1;
     /* Altura da linha de texto */
     line-height: 12px;
     /* Espaço entre a foto e o nome */
     margin-top: 8px;
+    font-family: "DM Serif Text", serif;
 }
 
 /* QUANDO O MODO CLARO ESTIVER ATIVADO: O batedor do botão vai para a direita */
@@ -157,15 +159,16 @@ body{
 #title{
     width: 253px;
     margin: auto;
+    text-align: center;
 }
 
 /* PARÁGRAFOS DENTRO DO TÍTULO */
-#title p{
+#title ul{
     text-align: center;
     width: 200px;
     margin: auto;
     /* Letra grande */
-    font-size: 24px;
+    font-size: 18px;
 }
 
 /* O TÍTULO PRINCIPAL (H1) */
@@ -192,7 +195,7 @@ ul li a{
     align-items: center;
     justify-content: center;
     /* Espaço dentro do botão */
-    padding: 16px 24px;
+    padding: 10px 18px;
     /* Fundo transparente fumê */
     background: rgba(255, 255, 255, 0.1);
     /* Bordas arredondadas */
@@ -202,13 +205,14 @@ ul li a{
     /* Efeito de vidro jateado (desfoca o que está atrás) */
     backdrop-filter: blur(4px);
     /* Peso da fonte */
-    font-weight: 500;
+    font-weight: 200;
     /* Cor do texto */
     color: var(--text-color);    
     /* Tira aquele risco embaixo do link */
     text-decoration: none; 
     /* Faz a cor mudar devagar (0.2 segundos) quando passar o mouse */
     transition: background 0.2s; 
+    font-family: "DM Serif Text", serif;
 }
 
 /* QUANDO O MOUSE ESTIVER EM CIMA DO BOTÃO */
