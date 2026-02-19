@@ -1,0 +1,260 @@
+/* O asterisco significa: 'Vale para todo mundo no site' */
+*{
+    /* Tira as margens grudadas nas bordas que o navegador coloca sozinho */
+    margin: 0;
+    /* Tira o espaço interno padrão */
+    padding: 0;
+    /* Faz com que o tamanho da caixa não mude se colocar bordas */
+    box-sizing: border-box; 
+} 
+
+
+/* CONFIGURAÇÕES DE CORES (Modo Escuro / Padrão) */
+:root{
+    /* Cor das letras */
+    --text-color: antiquewhite;
+    /* Foto de fundo */
+    --bg-url: url(assets/bg-desktop.jpg);
+    /* Cor das linhas das bordas (branquinho transparente) */
+    --stroke-color: rgba(255, 255, 255, 0.5);
+    /* Imagem que aparece dentro do botão switch */
+    --switch-bg-url: url(assets/night-mode.png);
+}
+
+/* CONFIGURAÇÕES PARA O MODO CLARO (Ativado quando o site tem a classe .light) */
+.light{
+    /* Letras pretas */
+    --text-color: black;
+    /* Fundo mais claro */
+    --bg-url: url(assets/bg-desktop-light.jpg);
+    /* Bordas escuras transparentes */
+    --stroke-color: rgba(10, 10, 10, 0.5);
+    /* Imagem de sol no botão */
+    --switch-bg-url: url(assets/light-mode.png);
+}
+
+/* O 'CORPO' DO SITE */
+body{
+    /* Define o fundo: cor base, imagem, não repetir, posição e preencher a tela toda */
+    background: plum var(--bg-url) no-repeat top center/cover;
+    /* Aplica a cor do texto que escolhi lá em cima */
+    color: var(--text-color);
+}
+
+/* CAIXA QUE SEGURA O PERFIL E O SWITCH */
+#container{
+    /* Largura fixa da caixa */
+    width: 500px;
+    /* Centraliza a caixa no meio da tela */
+    margin: auto;
+    /* Empurra a caixa um pouco para baixo do topo */
+    margin-top: 30px;
+}
+
+/* ÁREA DA FOTO E NOME */
+#profile{
+    /* Centraliza o texto e a imagem */
+    text-align: center;
+    /* Espaço interno para não ficar tudo apertado */
+    padding: 32px;
+}
+
+/* AJUSTES NA FOTO DE PERFIL */
+#profile img{
+    /* Tamanho da largura da foto */
+    width: 112px;
+    /* Centraliza */
+    margin: auto;
+    /* Deixa a foto redondinha */
+    border-radius: 66px;
+    /* Coloca uma linha em volta da foto */
+    border: solid 1px var(--text-color);
+}
+
+/* AJUSTES NO TEXTO ABAIXO DA FOTO */
+#profile p{
+    /* Deixa a letra um pouco mais gordinha (negrito médio) */
+    font-weight: 500;
+    /* Altura da linha de texto */
+    line-height: 12px;
+    /* Espaço entre a foto e o nome */
+    margin-top: 8px;
+}
+
+/* QUANDO O MODO CLARO ESTIVER ATIVADO: O batedor do botão vai para a direita */
+.light #switch button{
+    right: 0;
+    left: initial; /* Solta o botão da esquerda (cancela a ordem anterior). */
+}
+
+/* A CAIXA DO INTERRUPTOR (SWITCH) */
+#switch{
+    /* Permite posicionar coisas 'presas' dentro dele */
+    position: relative;
+    /* Largura do trilho */
+    width: 64px;
+    /* Centraliza */
+    margin: 0 auto;
+    /* Espaço abaixo dele (3% da altura da tela) */
+    margin-bottom: 3vh;
+}
+
+/* A BOLINHA DO BOTÃO */
+#switch button{
+    /* Tamanho da bolinha */
+    width: 32px;
+    height: 32px;
+    /* Tira a borda que vem no botão */
+    border: 0;
+    /* Deixa redondo */
+    border-radius: 50%;
+    /* Ajuda a alinhar o desenho dentro da bolinha */
+    display: flex;          
+    justify-content: center; 
+    align-items: center;
+    /* Cor de fundo e o desenho (sol ou lua) centralizado */
+    background: white var(--switch-bg-url) no-repeat center;
+    /* Tamanho do desenho dentro da bolinha */
+    background-size: 70%;
+    /* Permite que ele 'flutue' em cima do trilho */
+    position: absolute; 
+    /* Coloca ele na camada da frente */
+    z-index: 1;  
+    /* Centraliza no meio do trilho (vertical) */
+    top: 50%;
+    /* Começa na esquerda */
+    left: 0;
+    /* Ajuste fino para ficar perfeitamente no meio vertical */
+    transform: translateY(-50%);
+    /* Uma bordinha fina para destacar */
+    border: 1px solid rgba(0, 0, 0, 0.5);
+}
+
+/* O TRILHO DO BOTÃO (O FUNDO COMPRIDO) */
+#switch span{
+    /* Faz ele se comportar como uma caixa sólida */
+    display: block;
+    /* Largura e altura do trilho */
+    width: 64px;
+    height: 24px;
+    /* Cor de fundo bem clarinha e transparente */
+    background: rgba(255, 255, 255, 0.1);
+    /* Borda do trilho */
+    border: 1px solid var(--stroke-color);
+    /* Bordas super arredondadas */
+    border-radius: 9999px;
+}
+
+/* CAIXA DO TÍTULO E LINKS */
+#title{
+    width: 253px;
+    margin: auto;
+}
+
+/* PARÁGRAFOS DENTRO DO TÍTULO */
+#title p{
+    text-align: center;
+    width: 200px;
+    margin: auto;
+    /* Letra grande */
+    font-size: 24px;
+}
+
+/* O TÍTULO PRINCIPAL (H1) */
+#title h1{
+    /* Espaço embaixo do título */
+    padding-bottom: 3vh;
+}
+
+/* ESTILO DA LISTA DE LINKS */
+ul{
+    /* Tira as bolinhas da lista */
+    list-style: none;
+    /* Coloca os itens um embaixo do outro */
+    display: flex;
+    flex-direction: column;
+    /* Espaço de 16 pixels entre cada botão */
+    gap: 16px;
+}
+
+/* CADA BOTÃO DE LINK (O RETÂNGULO) */
+ul li a{
+    /* Faz o link ocupar o espaço todo e centraliza o texto */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* Espaço dentro do botão */
+    padding: 16px 24px;
+    /* Fundo transparente fumê */
+    background: rgba(255, 255, 255, 0.1);
+    /* Bordas arredondadas */
+    border-radius: 10px;
+    /* Bordinha fina */
+    border: 1px solid var(--stroke-color);
+    /* Efeito de vidro jateado (desfoca o que está atrás) */
+    backdrop-filter: blur(4px);
+    /* Peso da fonte */
+    font-weight: 500;
+    /* Cor do texto */
+    color: var(--text-color);    
+    /* Tira aquele risco embaixo do link */
+    text-decoration: none; 
+    /* Faz a cor mudar devagar (0.2 segundos) quando passar o mouse */
+    transition: background 0.2s; 
+}
+
+/* QUANDO O MOUSE ESTIVER EM CIMA DO BOTÃO */
+ul li a:hover {
+    /* Fundo fica mais escuro */
+    background: rgba(30, 30, 30, 0.85);
+    /* Borda fica um tiquinho mais grossa */
+    border: 1.5px solid var(--stroke-color);
+}
+
+/* CAIXA DOS ÍCONES SOCIAIS */
+#sociallinks{
+    width: 253px;
+    /* Margem em cima/baixo de 3% da tela e centraliza pros lados */
+    margin: 3vh auto;
+    /* Alinha os ícones no centro */
+    justify-content: center;
+    align-items: center;
+    /* Coloca os ícones lado a lado */
+    display: flex;
+    /* Espaço entre os ícones */
+    gap: 16px;
+}
+
+/* CADA LINK DE ÍCONE */
+#sociallinks a{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* Transição suave ao passar o mouse */
+    transition: background 0.2s;
+    /* Deixa o fundo do ícone redondo ao passar o mouse */
+    border-radius: 50%;
+    /* Espaço interno */
+    padding: 5px;
+}
+
+/* TAMANHO DAS IMAGENS DOS ÍCONES */
+#sociallinks img{
+    width: 30px;
+}
+
+/* EFEITO AO PASSAR O MOUSE NO ÍCONE SOCIAL */
+#sociallinks a:hover{
+    /* Ganha uma cor de fundo suave */
+    background: var(--stroke-color);
+}
+
+/* RODAPÉ (LÁ NO FIM DA PÁGINA) */
+footer{
+    /* Espaço em cima e embaixo */
+    padding: 24px 0;
+    /* Centraliza o texto */
+    text-align: center;
+    /* Letra um pouco menor */
+    font-size: 14px;
+}
