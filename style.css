@@ -57,6 +57,7 @@ body{
     text-align: center;
     /* Espaço interno para não ficar tudo apertado */
     padding: 32px;
+    height: 200px;
 }
 
 /* AJUSTES NA FOTO DE PERFIL */
