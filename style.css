@@ -44,12 +44,11 @@ body{
 
 /* CAIXA QUE SEGURA O PERFIL E O SWITCH */
 #container{
-    /* Largura fixa da caixa */
-    width: 500px;
-    /* Centraliza a caixa no meio da tela */
-    margin: auto;
-    /* Empurra a caixa um pouco para baixo do topo */
-    margin-top: 30px;
+    width: 100%; /* Garante que em telas pequenas ele ocupe a tela toda */
+    max-width: 500px;
+    margin: 30px auto 0;
+    /* Respiro lateral */
+    padding: 0 24px;
 }
 
 /* ÁREA DA FOTO E NOME */
